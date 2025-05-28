@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(_player.gameObject); // Distrugge il giocatore quando l'enemy lo tocca
+           collision.gameObject.GetComponent<LifeController_Script>().RemoveHp(10); // Rimuove 10 punti vita al giocatore quando l'enemy lo colpisce
         }
     }
 
