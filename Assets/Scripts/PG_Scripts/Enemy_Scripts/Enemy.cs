@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
             Vector2 direction = (_player.transform.position - transform.position).normalized;
             // Muovi l'enemy nella direzione del giocatore
             transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _enemySpeed * Time.deltaTime);
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, direction); // Ruota l'enemy verso il giocatore
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, direction); // Ruota l'enemy verso il giocatore ma non fuzniona (lo fa al contrario)
         }
     }
 }

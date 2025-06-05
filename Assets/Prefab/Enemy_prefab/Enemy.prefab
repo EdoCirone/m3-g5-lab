@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 136634621184377566}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.96, z: 0}
+  m_LocalPosition: {x: 0, y: 0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 6956610638243138437, guid: b4bf8a3f82897d748ad657eea420e5ca, type: 3}
-  _shotInterval: 0.5
+  _shotInterval: 1
   _spawnPoint: {fileID: 3906144855986035143}
 --- !u!60 &6120585561824239692
 PolygonCollider2D:
