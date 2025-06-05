@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifeController_Script : MonoBehaviour
+public class LifeController : MonoBehaviour
 {
 
     [SerializeField] int _currentHp = 100;
@@ -48,6 +48,7 @@ public class LifeController_Script : MonoBehaviour
     void Start()
     {
         if (_fullHpOnStart)
+
         {
             SetHp(_maxHp); // Imposta la vita corrente al massimo all'inizio
         }

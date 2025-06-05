@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-           collision.gameObject.GetComponent<LifeController_Script>().RemoveHp(10); // Rimuove 10 punti vita al giocatore quando l'enemy lo colpisce
+           collision.gameObject.GetComponent<LifeController>().RemoveHp(10); // Rimuove 10 punti vita al giocatore quando l'enemy lo colpisce
         }
     }
 
