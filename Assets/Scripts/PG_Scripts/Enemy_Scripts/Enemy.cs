@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
         _player = FindAnyObjectByType<PlayerController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         EnemyMovement(); // Muovo il nemico verso il giocatore
     }
