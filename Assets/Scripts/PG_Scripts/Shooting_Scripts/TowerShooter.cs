@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerShooter : AbstractShooter
+public class TowerShooter : PlayerShooterController
 {
 
-    [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private float _range = 5f;
-    Enemy[] enemies;
+
 
     private void Update()
     {
@@ -19,23 +17,25 @@ public class TowerShooter : AbstractShooter
         }
     }
 
-    public bool EnemyInRange(out Vector3 enemyDirection)
+    public override bool EnemyInRange(out Vector3 enemyDirection)
     {
-
-        enemies = FindObjectsOfType<Enemy>();// Trova tutti gli oggetti di tipo Enemy nella scena
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
 
         foreach (Enemy enemy in enemies)
         {
-            if (Vector3.Distance(_spawnPoint.position, enemy.transform.position) <= _range)// Controlla se il nemico è entro il range
+            if (Vector3.Distance(_spawnPoint.position, enemy.transform.position) <= _range)
             {
-                enemyDirection = (enemy.transform.position - _spawnPoint.position).normalized;// Calcola la direzione verso il nemico e la restituisce al metodo TryShoot
+               
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, enemy.transform.position - _spawnPoint.position);
+                enemyDirection = (enemy.transform.position - _spawnPoint.position).normalized;
                 return true;
             }
         }
 
-        enemyDirection = Vector3.zero; // Se non ci sono nemici in range, restituisci un vettore nullo
+        enemyDirection = Vector3.zero;
         return false;
-
     }
-
 }
+
+
+
